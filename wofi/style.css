@@ -1,8 +1,12 @@
-@import url('/home/dorian/.cache/wal/colors-waybar.css');
-@define-color mauve  @color9;
-@define-color red  @color9;
-@define-color lavender  @color7;
-@define-color text  @color7;
+
+
+/* Pastel Color Palette */
+@define-color pastel-blue #A2C2E1;
+@define-color pastel-pink #F7A1C2;
+@define-color pastel-lavender #D0A7D4;
+@define-color pastel-text #F1E1C6;
+@define-color pastel-mauve #F1D0C7;
+
 * {
     all: unset;
     font-family: 'CodeNewRoman Nerd Font Mono', monospace;
@@ -17,7 +21,7 @@ window {
     all: unset;
     padding: 20px;
     border-radius: 15px;
-    background-color: alpha(#000000, 0.5);  /* Black with 50% transparency */
+    background-color: rgba(162, 194, 225, 0.7);  /* Pastel blue with transparency */
 }
 
 #inner-box {
@@ -44,15 +48,15 @@ window {
     padding: 20px;
     border: none;
     outline: none;
-    color: @text;
+    color: #F1E1C6;  /* Text color */
     box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
     border-radius: 10px;
-    background-color: alpha(#808080, 0.2);  /* Light gray with 20% transparency */
+    background-color: rgba(255, 255, 255, 0.6);  /* Light pastel background with transparency */
 }
 
 #input image {
     border: none;
-    color: @red;
+    color: #F7A1C2;  /* Pastel pink color for icons */
     padding-right: 10px;
 }
 
@@ -70,7 +74,7 @@ window {
 #text {
     margin: 5px;
     border: none;
-    color: @text;
+    color: #F1E1C6;  /* Text color */
     outline: none;
 }
 
@@ -78,21 +82,22 @@ window {
     all: unset;
     padding-left: 35px;
     padding-top: 35px;
+    background-color: rgba(247, 161, 194, 0.7);  /* Pastel pink background with transparency */
 }
 
 #entry arrow {
     border: none;
-    color: @lavender;
+    color: #D0A7D4;  /* Pastel lavender color for arrows */
 }
 
 #entry:selected {
+    background-color: rgba(208, 167, 212, 0.7);  /* Selected background in pastel lavender with transparency */
 }
 
 #entry:selected #text {
-    color: @mauve;
+    color: #F1D0C7;  /* Mauve color for text in selected entry */
 }
 
 #entry:drop(active) {
-    background-color: @lavender !important;
+    background-color: rgba(208, 167, 212, 0.7) !important;  /* Drop active background with transparency */
 }
-
