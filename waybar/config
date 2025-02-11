@@ -1,0 +1,132 @@
+{
+    "layer": "top",
+    "position": "top",
+    "reload_style_on_change": true,
+    "exclusive": true,
+    "margin": 5,
+    "modules-left": [
+        "custom/notification",
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "mpris"
+    ],
+    "modules-right": [
+        "wireplumber",
+        "cpu", 
+        "clock",
+        "tray"
+    ],
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "active": "",  // Active workspace (filled circle)
+            "default": "",  // Default workspace (empty circle)
+            "empty": ""    // Empty workspace (empty circle)
+        },
+        "persistent-workspaces": {
+            "*": [1, 2, 3, 4, 5]  // Adjust to your workspace count
+        }
+    },
+    "custom/notification": {
+        "tooltip": false,
+        "format": " ",  // NixOS icon (from Nerd Fonts)
+        "on-click": "swaync-client -t -sw",
+        "escape": true
+    },
+    "clock": {
+        "format": " {:%a %d %I:%M:%S %p}",  // Clock icon ()
+        "interval": 1,
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "format": {
+                "today": "<span color='#fAfBfC'><b>{}</b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "shift_down",
+            "on-click": "shift_up"
+        }
+    },
+    "network": {
+        "format-wifi": "",  // Wi-Fi icon ()
+        "format-ethernet": "",  // Ethernet icon ()
+        "format-disconnected": "",  // Disconnected icon ()
+        "tooltip-format-disconnected": "Error",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "on-click": "kitty nmtui"
+    },
+    "bluetooth": {
+        "format-on": "",  // Bluetooth on icon ()
+        "format-off": "BT-off",
+        "format-disabled": "",  // Bluetooth disabled icon ()
+        "format-connected-battery": "{device_battery_percentage}% ",
+        "format-alt": "{device_alias} ",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
+        "on-click-right": "blueman-manager"
+    },
+    "battery": {
+        "interval": 30,
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",  // Charging icon ()
+        "format-plugged": "{capacity}% ",  // Plugged in icon ()
+        "format-alt": "{time} {icon}",
+        "format-icons": [
+            "",  // Battery icons (, , , , )
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "custom/pacman": {
+        "format": " {}",  // Package icon ()
+        "interval": 30,
+        "exec": "checkupdates | wc -l",
+        "exec-if": "exit 0",
+        "on-click": "kitty sh -c 'yay; sudo pacman -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
+        "signal": 8,
+        "tooltip": false
+    },
+    "cpu": {
+        "format": "",  // CPU icon ()
+        "tooltip": true,
+        "on-click": "foot btop"
+    },
+    "memory": {
+        "format": "",  // Memory icon ()
+        "on-click": "foot btop"
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format": " {temperature}°C",  // Thermometer icon ()
+        "tooltip": true
+    },
+    "tray": {
+        "icon-size": 14,
+        "spacing": 10
+    },
+    "wireplumber": {
+        "format": "",  // Speaker icon ()
+        "tooltip-format": "Volume: {volume}%",
+        "on-click": "pavucontrol",
+        "interval": 1,
+        "icon": ""
+    },
+    "mpris": {
+        "format": "{title} - {artist}",  // Music note icon ()
+        "format-muted": " Muted",  // Muted icon ()
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl next",
+        "tooltip-format": "Album: {album}\nArtist: {artist}\nTitle: {title}"
+    }
+}

@@ -1,0 +1,137 @@
+* {
+    font-size: 15px; /* Smaller font size */
+    font-family: "CodeNewRoman Nerd Font Propo";
+    font-weight: bold;
+}
+
+window#waybar {
+    all: unset;
+}
+
+/* Group styles without background */
+.modules-left,
+.modules-center,
+.modules-right {
+    padding: 3px;
+    margin: 3px;
+    border-radius: 8px;
+    background: none; /* Removed background */
+    box-shadow: none; /* Removed shadow */
+}
+
+/* Tooltip style */
+tooltip {
+    background: #2A1A30; /* Dark pinkish background */
+    color: #D1A8D1; /* Light pink text */
+}
+
+/* Hover effects for individual modules */
+#clock:hover, #custom-pacman:hover, #custom-notification:hover, #bluetooth:hover, #network:hover, #battery:hover, #cpu:hover, #memory:hover, #temperature:hover, #wireplumber:hover {
+    transition: all .3s ease;
+    color: #A7C7E7; /* Light blue on hover */
+}
+
+/* Individual module styles without background */
+#custom-notification, #clock, #custom-pacman, #bluetooth, #network, #battery, #cpu, #memory, #temperature, #wireplumber {
+    padding: 2px 4px;
+    color: #D1A8D1; /* Light pinkish color */
+    transition: all .3s ease;
+    background: none;
+}
+
+/* Workspaces (kept original colors) */
+#workspaces {
+    padding: 0px 3px;
+}
+
+#workspaces button {
+    all: unset;
+    padding: 2px 4px;
+    color: rgba(255, 255, 255, 0.5); /* Slightly faded white */
+    transition: all .2s ease;
+}
+
+#workspaces button:hover {
+    color: rgba(255, 255, 255, 1);
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(255, 255, 255, 0.5);
+    transition: all 1s ease;
+}
+
+#workspaces button.active {
+    color: #81A4F4; /* Soft blue for active workspace */
+    border: none;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+}
+
+#workspaces button.empty {
+    color: rgba(255, 255, 255, 0);
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(255, 255, 255, 0.2);
+}
+
+/* Battery status */
+#battery.charging {
+    color: #7E57C2; /* Purple charging status */
+}
+
+#battery.warning:not(.charging) {
+    color: #FF80AB; /* Pinkish warning color */
+}
+
+#battery.critical:not(.charging) {
+    color: #F50057; /* Bright pink for critical */
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* Define the blink animation */
+@keyframes blink {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Expand and tray modules */
+#group-expand, #custom-expand, #custom-colorpicker, #cpu, #memory, #temperature {
+    padding: 2px 4px;
+    transition: all .3s ease;
+}
+
+#custom-expand {
+    color: rgba(255, 255, 255, 0.2); /* Slightly faded white */
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .7);
+}
+
+#custom-expand:hover {
+    color: rgba(255, 255, 255, 0.2);
+    text-shadow: 0px 0px 2px rgba(255, 255, 255, .5);
+}
+
+#custom-endpoint {
+    color: transparent;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 1);
+}
+
+/* Tray styles */
+#tray {
+    padding: 2px 4px;
+    transition: all .3s ease;
+}
+
+#tray menu * {
+    padding: 2px 4px;
+    transition: all .3s ease;
+}
+
+#tray menu separator {
+    padding: 2px 4px;
+    transition: all .3s ease;
+}
+
