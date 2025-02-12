@@ -23,6 +23,8 @@
     ".config/swaync".source = ~/dotfiles/swaync;
     ".config/foot".source = ~/dotfiles/foot;
     ".config/wofi".source = ~/dotfiles/wofi;
+     
+    
   };
 
   home.sessionVariables = {};

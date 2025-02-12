@@ -1,3 +1,5 @@
+@import "mocha.css";
+
 * {
     font-size: 15px; /* Smaller font size */
     font-family: "CodeNewRoman Nerd Font Propo";
@@ -8,33 +10,115 @@ window#waybar {
     all: unset;
 }
 
-/* Group styles without background */
+/* Group styles with dark background and rounded corners */
 .modules-left,
 .modules-center,
 .modules-right {
-    padding: 3px;
+    padding: 4px 8px;       /* Extra horizontal padding for a nicer rounded area */
     margin: 3px;
     border-radius: 8px;
-    background: none; /* Removed background */
-    box-shadow: none; /* Removed shadow */
+    background: @mantle;    /* Dark background from mocha.css */
+    box-shadow: none;
 }
 
 /* Tooltip style */
 tooltip {
     background: #2A1A30; /* Dark pinkish background */
-    color: #D1A8D1; /* Light pink text */
+    color: #D1A8D1;      /* Light pink text */
 }
 
-/* Hover effects for individual modules */
-#clock:hover, #custom-pacman:hover, #custom-notification:hover, #bluetooth:hover, #network:hover, #battery:hover, #cpu:hover, #memory:hover, #temperature:hover, #wireplumber:hover {
+/* Remove universal hover color so modules keep their assigned color */
+#clock:hover,
+#custom-pacman:hover,
+#custom-notification:hover,
+#bluetooth:hover,
+#network:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#temperature:hover,
+#wireplumber:hover,
+#mpris:hover {
     transition: all .3s ease;
-    color: #A7C7E7; /* Light blue on hover */
+    /* No color override on hover */
 }
 
-/* Individual module styles without background */
-#custom-notification, #clock, #custom-pacman, #bluetooth, #network, #battery, #cpu, #memory, #temperature, #wireplumber {
+/* Individual module styles without background, each with its unique color */
+#custom-notification {
     padding: 2px 4px;
-    color: #D1A8D1; /* Light pinkish color */
+    color: @blue; /* Blue from mocha: #89b4fa */
+    transition: all .3s ease;
+    background: none;
+}
+
+#clock {
+    padding: 2px 4px;
+    color: @green; /* Green from mocha: #a6e3a1 */
+    transition: all .3s ease;
+    background: none;
+    border-radius: 0 1rem 1rem 0;
+    margin-right: 1rem;
+}
+
+#custom-pacman {
+    padding: 2px 4px;
+    color: @yellow; /* Yellow from mocha: #f9e2af */
+    transition: all .3s ease;
+    background: none;
+}
+
+#bluetooth {
+    padding: 2px 4px;
+    color: @pink; /* Pink from mocha: #f5c2e7 */
+    transition: all .3s ease;
+    background: none;
+}
+
+#network {
+    padding: 2px 4px;
+    color: @teal; /* Teal from mocha: #94e2d5 */
+    transition: all .3s ease;
+    background: none;
+}
+
+#battery {
+    padding: 2px 4px;
+    color: @peach; /* Peach from mocha: #fab387 */
+    transition: all .3s ease;
+    background: none;
+}
+
+#cpu {
+    padding: 2px 4px;
+    color: @lavender; /* Lavender from mocha: #b4befe */
+    transition: all .3s ease;
+    background: none;
+}
+
+#memory {
+    padding: 2px 4px;
+    color: @sapphire; /* Sapphire from mocha: #74c7ec */
+    transition: all .3s ease;
+    background: none;
+}
+
+#temperature {
+    padding: 2px 4px;
+    color: @maroon; /* Maroon from mocha: #eba0ac */
+    transition: all .3s ease;
+    background: none;
+}
+
+#wireplumber {
+    padding: 2px 4px;
+    color: @mauve; /* Mauve from mocha: #cba6f7 */
+    transition: all .3s ease;
+    background: none;
+}
+
+#mpris {
+    padding: 2px 4px;
+    color: @flamingo; /* Flamingo from mocha: #f2cdcd */
     transition: all .3s ease;
     background: none;
 }
@@ -99,7 +183,12 @@ tooltip {
 }
 
 /* Expand and tray modules */
-#group-expand, #custom-expand, #custom-colorpicker, #cpu, #memory, #temperature {
+#group-expand,
+#custom-expand,
+#custom-colorpicker,
+#cpu,
+#memory,
+#temperature {
     padding: 2px 4px;
     transition: all .3s ease;
 }
@@ -134,4 +223,3 @@ tooltip {
     padding: 2px 4px;
     transition: all .3s ease;
 }
-

@@ -1,103 +1,130 @@
+/* Rofi-inspired Wofi theme */
 
+/* Define your colors */
+@define-color bg-col       #1e1e2e;
+@define-color bg-col-light #1e1e2e;
+@define-color border-col   #1e1e2e;
+@define-color selected-col #1e1e2e;
+@define-color blue         #89b4fa;
+@define-color fg-col       #cdd6f4;
+@define-color fg-col2      #f38ba8;
+@define-color grey         #6c7086;
 
-/* Pastel Color Palette */
-@define-color pastel-blue #A2C2E1;
-@define-color pastel-pink #F7A1C2;
-@define-color pastel-lavender #D0A7D4;
-@define-color pastel-text #F1E1C6;
-@define-color pastel-mauve #F1D0C7;
-
+/* Base styling for all elements */
 * {
     all: unset;
-    font-family: 'CodeNewRoman Nerd Font Mono', monospace;
-    font-size: 18px;
-    outline: none;
-    border: none;
-    text-shadow: none;
+    font-family: 'JetBrainsMono Nerd Font', monospace;
+    font-size: 14px;
     background-color: transparent;
+    color: @fg-col;
 }
 
+/* The main window */
 window {
     all: unset;
+    width: 600px;
+    height: 360px;
     padding: 20px;
     border-radius: 15px;
-    background-color: rgba(162, 194, 225, 0.7);  /* Pastel blue with transparency */
+    background-color: @bg-col;
+    border: 3px solid @border-col;
 }
 
+/* Optional inner containers */
 #inner-box {
     margin: 2px;
     padding: 5px;
-    border: none;
 }
 
 #outer-box {
-    border: none;
+    /* No additional styling – customize if needed */
 }
 
+/* Scrollable list container (for listview items) */
 #scroll {
-    margin: 0px;
-    padding: 30px;
-    border: none;
+    margin: 10px 0 0 20px;
+    padding: 6px 0 0;
+    background-color: @bg-col;
 }
 
+/* Input area: container for the prompt and search entry */
 #input {
     all: unset;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 20px;
-    padding: 20px;
-    border: none;
-    outline: none;
-    color: #F1E1C6;  /* Text color */
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.6);  /* Light pastel background with transparency */
+    margin: 20px;
+    padding: 2px;
+    background-color: @bg-col;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
 }
 
-#input image {
-    border: none;
-    color: #F7A1C2;  /* Pastel pink color for icons */
-    padding-right: 10px;
+/* Prompt (a label in front of your entry field) */
+#prompt {
+    background-color: @blue;
+    padding: 6px;
+    border-radius: 3px;
+    margin-right: 10px;
+    color: @bg-col;
 }
 
-#input * {
-    border: none;
-    outline: none;
-}
-
-#input:focus {
-    outline: none;
-    border: none;
-    border-radius: 10px;
-}
-
+/* A text element (if needed) */
 #text {
     margin: 5px;
-    border: none;
-    color: #F1E1C6;  /* Text color */
-    outline: none;
+    color: @fg-col;
 }
 
+/* The search entry – analogous to Rofi’s “entry” */
 #entry {
     all: unset;
-    padding-left: 35px;
-    padding-top: 35px;
-    background-color: rgba(247, 161, 194, 0.7);  /* Pastel pink background with transparency */
+    padding: 6px;
+    margin: 20px 0 0 10px;
+    background-color: @bg-col;
+    color: @fg-col;
 }
 
+/* (Optional) If your list items include arrow icons */
 #entry arrow {
-    border: none;
-    color: #D0A7D4;  /* Pastel lavender color for arrows */
+    color: @blue;
 }
 
+/* When a list item is selected, use the “selected” colors */
 #entry:selected {
-    background-color: rgba(208, 167, 212, 0.7);  /* Selected background in pastel lavender with transparency */
+    background-color: @selected-col;
 }
-
 #entry:selected #text {
-    color: #F1D0C7;  /* Mauve color for text in selected entry */
+    color: @fg-col2;
 }
 
+/* If drag‐and‐drop is supported */
 #entry:drop(active) {
-    background-color: rgba(208, 167, 212, 0.7) !important;  /* Drop active background with transparency */
+    background-color: @selected-col !important;
+}
+
+/* Button styling */
+button {
+    padding: 10px;
+    background-color: @bg-col-light;
+    color: @grey;
+    border-radius: 5px;
+}
+button:active,
+button:selected {
+    background-color: @bg-col;
+    color: @blue;
+}
+
+/* Message popups */
+#message {
+    background-color: @bg-col-light;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+/* Additional textbox styling (if you have extra text input areas) */
+#textbox {
+    padding: 6px;
+    margin: 20px 0 0 20px;
+    background-color: @bg-col-light;
+    color: @blue;
 }
