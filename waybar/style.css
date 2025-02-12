@@ -27,100 +27,143 @@ tooltip {
     color: #D1A8D1;      /* Light pink text */
 }
 
-/* Remove universal hover color so modules keep their assigned color */
-#clock:hover,
-#custom-pacman:hover,
-#custom-notification:hover,
-#bluetooth:hover,
-#network:hover,
-#battery:hover,
-#cpu:hover,
-#memory:hover,
-#temperature:hover,
-#wireplumber:hover,
-#mpris:hover {
-    transition: all .3s ease;
-    /* No color override on hover */
-}
+/*
+  Since Waybar does not support the CSS 'filter' property,
+  we override each module’s color on hover with a manually computed, darker color.
+*/
 
-/* Individual module styles without background, each with its unique color */
+/* #custom-notification (Blue: original @blue = #89b4fa) */
 #custom-notification {
     padding: 2px 4px;
-    color: @blue; /* Blue from mocha: #89b4fa */
+    color: @blue; /* #89b4fa */
     transition: all .3s ease;
     background: none;
 }
+#custom-notification:hover {
+    /* Darkened by ~30%: (137,180,250) * 0.7 → (96,126,175) = #607eaf */
+    color: #607eaf;
+}
 
+/* #clock (Green: original @green = #a6e3a1) */
 #clock {
     padding: 2px 4px;
-    color: @green; /* Green from mocha: #a6e3a1 */
+    color: @green; /* #a6e3a1 */
     transition: all .3s ease;
     background: none;
     border-radius: 0 1rem 1rem 0;
     margin-right: 1rem;
 }
+#clock:hover {
+    /* (166,227,161) * 0.7 → (116,159,113) = #749f71 */
+    color: #749f71;
+}
 
+/* #custom-pacman (Yellow: original @yellow = #f9e2af) */
 #custom-pacman {
     padding: 2px 4px;
-    color: @yellow; /* Yellow from mocha: #f9e2af */
+    color: @yellow; /* #f9e2af */
     transition: all .3s ease;
     background: none;
 }
+#custom-pacman:hover {
+    /* (249,226,175) * 0.7 → (174,158,123) = #ae9e7b */
+    color: #ae9e7b;
+}
 
+/* #bluetooth (Pink: original @pink = #f5c2e7) */
 #bluetooth {
     padding: 2px 4px;
-    color: @pink; /* Pink from mocha: #f5c2e7 */
+    color: @pink; /* #f5c2e7 */
     transition: all .3s ease;
     background: none;
 }
+#bluetooth:hover {
+    /* (245,194,231) * 0.7 → (172,136,162) = #ac88a2 */
+    color: #ac88a2;
+}
 
+/* #network (Teal: original @teal = #94e2d5) */
 #network {
     padding: 2px 4px;
-    color: @teal; /* Teal from mocha: #94e2d5 */
+    color: @teal; /* #94e2d5 */
     transition: all .3s ease;
     background: none;
 }
+#network:hover {
+    /* (148,226,213) * 0.7 → (104,158,149) = #689e95 */
+    color: #689e95;
+}
 
+/* #battery (Peach: original @peach = #fab387) */
 #battery {
     padding: 2px 4px;
-    color: @peach; /* Peach from mocha: #fab387 */
+    color: @peach; /* #fab387 */
     transition: all .3s ease;
     background: none;
 }
+#battery:hover {
+    /* (250,179,135) * 0.7 → (175,125,95) = #af7d5f */
+    color: #af7d5f;
+}
 
+/* #cpu (Lavender: original @lavender = #b4befe) */
 #cpu {
     padding: 2px 4px;
-    color: @lavender; /* Lavender from mocha: #b4befe */
+    color: @lavender; /* #b4befe */
     transition: all .3s ease;
     background: none;
 }
+#cpu:hover {
+    /* (180,190,254) * 0.7 → (126,133,178) = #7e85b2 */
+    color: #7e85b2;
+}
 
+/* #memory (Sapphire: original @sapphire = #74c7ec) */
 #memory {
     padding: 2px 4px;
-    color: @sapphire; /* Sapphire from mocha: #74c7ec */
+    color: @sapphire; /* #74c7ec */
     transition: all .3s ease;
     background: none;
 }
+#memory:hover {
+    /* (116,199,236) * 0.7 → (81,139,165) = #518ba5 */
+    color: #518ba5;
+}
 
+/* #temperature (Maroon: original @maroon = #eba0ac) */
 #temperature {
     padding: 2px 4px;
-    color: @maroon; /* Maroon from mocha: #eba0ac */
+    color: @maroon; /* #eba0ac */
     transition: all .3s ease;
     background: none;
 }
+#temperature:hover {
+    /* (235,160,172) * 0.7 → (165,112,120) = #a57078 */
+    color: #a57078;
+}
 
+/* #wireplumber (Mauve: original @mauve = #cba6f7) */
 #wireplumber {
     padding: 2px 4px;
-    color: @mauve; /* Mauve from mocha: #cba6f7 */
+    color: @mauve; /* #cba6f7 */
     transition: all .3s ease;
     background: none;
 }
+#wireplumber:hover {
+    /* (203,166,247) * 0.7 → (142,116,173) = #8e74ad */
+    color: #8e74ad;
+}
 
+/* #mpris (Flamingo: original @flamingo = #f2cdcd) */
 #mpris {
     padding: 2px 4px;
-    color: @flamingo; /* Flamingo from mocha: #f2cdcd */
+    color: @flamingo; /* #f2cdcd */
     transition: all .3s ease;
     background: none;
+}
+#mpris:hover {
+    /* (242,205,205) * 0.7 → (169,144,144) = #a99090 */
+    color: #a99090;
 }
 
 /* Workspaces (kept original colors) */
@@ -223,3 +266,4 @@ tooltip {
     padding: 2px 4px;
     transition: all .3s ease;
 }
+
