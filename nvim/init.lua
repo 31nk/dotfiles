@@ -83,3 +83,5 @@ require("lazyvim.util").on_very_lazy(function()
   vim.api.nvim_set_hl(0, "Visual", { bg = "#EABCA8" })
 end)
 
+vim.opt.number = true
+vim.opt.relativenumber = false
