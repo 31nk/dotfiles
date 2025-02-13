@@ -44,24 +44,42 @@ require("lazyvim.util").on_very_lazy(function()
   -- Note: Using "hi clear" will reset all highlight groups.
   vim.cmd("hi clear")
 
-  -- Set custom highlights using your provided hex codes:
-  -- Normal text: foreground #EFEFEF, background #252535
-  vim.api.nvim_set_hl(0, "Normal", { fg = "#EFEFEF", bg = "#252535" })
+  -- Provided colors:
+  -- A: #E4ACB2
+  -- B: #EABCA8
+  -- C: #FAEDCD
+  -- D: #CCD5AE
+  -- E: #99BAB9
+  -- F: #252535
+  --
+  -- Assigned highlight groups:
+  -- Normal:   fg = C, bg = F
+  -- Statement: fg = A
+  -- Comment:   fg = B (italicized)
+  -- Constant:  fg = D
+  -- Identifier:fg = E
+  -- LineNr:    fg = A  (duplicate with Statement)
+  -- Visual:    bg = B  (duplicate with Comment)
 
-  -- Example syntax groups:
-  -- Keywords/Statements in #B1E6F3
-  vim.api.nvim_set_hl(0, "Statement", { fg = "#B1E6F3" })
+  -- Normal text
+  vim.api.nvim_set_hl(0, "Normal", { fg = "#FAEDCD", bg = "#252535" })
 
-  -- Comments in #72DDF7 (italicized)
-  vim.api.nvim_set_hl(0, "Comment", { fg = "#72DDF7", italic = true })
+  -- Keywords/Statements
+  vim.api.nvim_set_hl(0, "Statement", { fg = "#E4ACB2" })
 
-  -- Constants in #79B8F4
-  vim.api.nvim_set_hl(0, "Constant", { fg = "#79B8F4" })
+  -- Comments (italicized)
+  vim.api.nvim_set_hl(0, "Comment", { fg = "#EABCA8", italic = true })
 
-  -- Identifiers in #8093F1
-  vim.api.nvim_set_hl(0, "Identifier", { fg = "#8093F1" })
+  -- Constants
+  vim.api.nvim_set_hl(0, "Constant", { fg = "#CCD5AE" })
 
-  -- You can override additional highlight groups as desired:
-  vim.api.nvim_set_hl(0, "LineNr", { fg = "#72DDF7" })     -- For line numbers
-  vim.api.nvim_set_hl(0, "Visual", { bg = "#8093F1" })       -- For visual selection
+  -- Identifiers
+  vim.api.nvim_set_hl(0, "Identifier", { fg = "#99BAB9" })
+
+  -- Line numbers (shares the same color as Statement)
+  vim.api.nvim_set_hl(0, "LineNr", { fg = "#E4ACB2" })
+
+  -- Visual selection (shares the same color as Comment)
+  vim.api.nvim_set_hl(0, "Visual", { bg = "#EABCA8" })
 end)
+
