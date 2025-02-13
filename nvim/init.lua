@@ -17,35 +17,51 @@ require("lazy").setup({
   -- LazyVim base configuration
   { "LazyVim/LazyVim", import = "lazyvim.plugins" },
 
-  -- Kanagawa colorscheme by Rebelot
-  {
-    "rebelot/kanagawa.nvim",
-    priority = 1000, -- ensure the theme plugin loads early
-    config = function()
-      require("kanagawa").setup({
-        -- You can add custom options here
-      })
-      -- Note: We are not calling `vim.cmd("colorscheme kanagawa")` here,
-      -- because LazyVim might override it later.
-    end,
-  },
+  -- Removed the Kanagawa colorscheme plugin to avoid conflicts
 
   -- Additional plugins:
-  { "tpope/vim-sensible" },                                  -- Sensible defaults for Vim
-  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },  -- Treesitter
-  { "hrsh7th/nvim-cmp" },                                     -- Auto-completion
-  { "folke/which-key.nvim" },                                 -- Keybinding helper
-  { "neovim/nvim-lspconfig" },                                -- LSP support
-  { "williamboman/mason.nvim" },                              -- LSP/DAP installer
-  { "folke/trouble.nvim" },                                   -- Better diagnostics & quickfix
-  { "windwp/nvim-autopairs" },                                -- Auto-closing pairs
-  { "nvim-neo-tree/neo-tree.nvim" },                          -- Alternative file explorer
-  { "folke/lazydev.nvim" },                                   -- Development tools
-  { "nvim-tree/nvim-tree.lua" },                              -- File explorer (primary)
-  { "junegunn/fzf.vim" },                                     -- FZF integration
+  { "tpope/vim-sensible" },
+  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+  { "hrsh7th/nvim-cmp" },
+  { "folke/which-key.nvim" },
+  { "neovim/nvim-lspconfig" },
+  { "williamboman/mason.nvim" },
+  { "folke/trouble.nvim" },
+  { "windwp/nvim-autopairs" },
+  { "nvim-neo-tree/neo-tree.nvim" },
+  { "folke/lazydev.nvim" },
+  { "nvim-tree/nvim-tree.lua" },
+  { "junegunn/fzf.vim" },
 })
 
--- Override LazyVim's default colorscheme once it's finished initializing.
+-- Override LazyVim's colors once initialization is complete.
+-- This ensures our custom highlights are applied last.
 require("lazyvim.util").on_very_lazy(function()
-  vim.cmd("colorscheme kanagawa")
+  -- Enable true color support
+  vim.opt.termguicolors = true
+
+  -- (Optional) Clear any previous highlight settings from LazyVim.
+  -- Note: Using "hi clear" will reset all highlight groups.
+  vim.cmd("hi clear")
+
+  -- Set custom highlights using your provided hex codes:
+  -- Normal text: foreground #EFEFEF, background #252535
+  vim.api.nvim_set_hl(0, "Normal", { fg = "#EFEFEF", bg = "#252535" })
+
+  -- Example syntax groups:
+  -- Keywords/Statements in #B1E6F3
+  vim.api.nvim_set_hl(0, "Statement", { fg = "#B1E6F3" })
+
+  -- Comments in #72DDF7 (italicized)
+  vim.api.nvim_set_hl(0, "Comment", { fg = "#72DDF7", italic = true })
+
+  -- Constants in #79B8F4
+  vim.api.nvim_set_hl(0, "Constant", { fg = "#79B8F4" })
+
+  -- Identifiers in #8093F1
+  vim.api.nvim_set_hl(0, "Identifier", { fg = "#8093F1" })
+
+  -- You can override additional highlight groups as desired:
+  vim.api.nvim_set_hl(0, "LineNr", { fg = "#72DDF7" })     -- For line numbers
+  vim.api.nvim_set_hl(0, "Visual", { bg = "#8093F1" })       -- For visual selection
 end)

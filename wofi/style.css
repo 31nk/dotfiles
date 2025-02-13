@@ -1,14 +1,14 @@
-/* Rofi-inspired Wofi theme */
+/* Rofi-inspired Wofi theme with custom colors */
 
-/* Define your colors */
+/* Define your colors using your provided palette */
 @define-color bg-col       #252535;  /* Main background */
 @define-color bg-col-light #252535;  /* Lighter background (same as main for consistency) */
 @define-color border-col   #252535;  /* Border color */
-@define-color selected-col #DCD7BA;  /* Selected background becomes the light color */
-@define-color blue         #DCD7BA;  /* Using light color for the prompt background, etc. */
-@define-color fg-col       #DCD7BA;  /* Primary foreground (text) color */
+@define-color selected-col #B1E6F3;  /* Selected background becomes our accent color */
+@define-color blue         #79B8F4;  /* Prompt background and interactive blue */
+@define-color fg-col       #EFEFEF;  /* Primary foreground (text) color */
 @define-color fg-col2      #252535;  /* Inverse for selected text (for contrast) */
-@define-color grey         #DCD7BA;  /* Used for button text and such */
+@define-color grey         #72DDF7;  /* Used for button text and such */
 
 /* Base styling for all elements */
 * {

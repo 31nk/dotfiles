@@ -1,14 +1,14 @@
-@define-color base #252535;
-@define-color text #DCD7BA;
-@define-color surface0 #24273a;
-@define-color surface1 #31344a;
-@define-color surface2 #4c4f69;
-@define-color mtext #b5bfe2;
-@define-color mycolor #f5a97f;
-@define-color bg #252535;
-@define-color bg-hover #2e3040;
-@define-color mpris-album-art-overlay alpha(@bg, 0.55);
-@define-color mpris-button-hover alpha(@bg, 0.50);
+@define-color base         #252535;
+@define-color text         #EFEFEF;
+@define-color surface0     #252535;
+@define-color surface1     #252535;
+@define-color surface2     #252535;
+@define-color mtext        #B1E6F3;
+@define-color mycolor      #79B8F4;
+@define-color bg           #252535;
+@define-color bg-hover     #252535;
+@define-color mpris-album-art-overlay  alpha(@bg, 0.55);
+@define-color mpris-button-hover       alpha(@bg, 0.50);
 @define-color border-color alpha(@mycolor, 0.15);
 
 @keyframes fadeIn {
@@ -288,15 +288,16 @@
     background: transparent;
 }
 
+/* Updated to use provided colors */
 .widget-buttons-grid > flowbox > flowboxchild > button label {
     font-size: 20px;
-    color: @color7;
+    color: #72DDF7;
     transition: all .7s ease;
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button:hover label {
     font-size: 20px;
-    color: @text;
+    color: #EFEFEF;
     transition: all .7s ease;
 }
 
@@ -309,7 +310,7 @@
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button:hover {
-    background: @color4;
+    background: @color4; /* Not defined in our palette; you may set this if needed */
     box-shadow: 0px 0px 2px rgba(0, 0, 0, .2);
     transition: all .5s ease;
 }
@@ -319,7 +320,7 @@
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked label {
-    color: @background;
+    color: @bg;
 }
 
 .widget-menubar > box > .menu-button-bar > button {
@@ -337,17 +338,17 @@ trough {
     background: transparent;
 }
 
+/* Updated trough highlight to use two of the provided blue accents */
 trough highlight {
     padding: 5px;
-    background: @mycolor;
+    background: #72DDF7;
     border-radius: 20px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, .5);
     transition: all .7s ease;
 }
-
 trough highlight:hover {
     padding: 5px;
-    background: @mycolor;
+    background: #8093F1;
     border-radius: 20px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
     transition: all .7s ease;
