@@ -4,7 +4,7 @@
 @define-color bg-col       #252535;  /* Main background */
 @define-color bg-col-light #252535;  /* Lighter background (same as main for consistency) */
 @define-color border-col   #252535;  /* Border color */
-@define-color selected-col #FAEDCD;  /* Selected background becomes our accent color */
+@define-color selected-col #99bab9;  /* Selected background becomes our accent color */
 @define-color blue         #E4ACB2;  /* Prompt background and interactive accent */
 @define-color fg-col       #FAEDCD;  /* Primary foreground (text) color */
 @define-color fg-col2      #252535;  /* Inverse for selected text (for contrast) */
