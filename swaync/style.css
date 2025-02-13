@@ -1,11 +1,11 @@
-@define-color base #1e1e2e;
-@define-color text #cdd6f4;
+@define-color base #252535;
+@define-color text #DCD7BA;
 @define-color surface0 #24273a;
 @define-color surface1 #31344a;
 @define-color surface2 #4c4f69;
 @define-color mtext #b5bfe2;
 @define-color mycolor #f5a97f;
-@define-color bg #1f1f2e;
+@define-color bg #252535;
 @define-color bg-hover #2e3040;
 @define-color mpris-album-art-overlay alpha(@bg, 0.55);
 @define-color mpris-button-hover alpha(@bg, 0.50);
