@@ -1,14 +1,14 @@
 /* Rofi-inspired Wofi theme */
 
 /* Define your colors */
-@define-color bg-col       #1e1e2e;
-@define-color bg-col-light #1e1e2e;
-@define-color border-col   #1e1e2e;
-@define-color selected-col #1e1e2e;
-@define-color blue         #89b4fa;
-@define-color fg-col       #cdd6f4;
-@define-color fg-col2      #f38ba8;
-@define-color grey         #6c7086;
+@define-color bg-col       #252535;  /* Main background */
+@define-color bg-col-light #252535;  /* Lighter background (same as main for consistency) */
+@define-color border-col   #252535;  /* Border color */
+@define-color selected-col #DCD7BA;  /* Selected background becomes the light color */
+@define-color blue         #DCD7BA;  /* Using light color for the prompt background, etc. */
+@define-color fg-col       #DCD7BA;  /* Primary foreground (text) color */
+@define-color fg-col2      #252535;  /* Inverse for selected text (for contrast) */
+@define-color grey         #DCD7BA;  /* Used for button text and such */
 
 /* Base styling for all elements */
 * {

@@ -1,14 +1,17 @@
-@import "mocha.css";
-
 * {
     font-size: 15px; /* Smaller font size */
     font-family: "CodeNewRoman Nerd Font Propo";
     font-weight: bold;
+    color: #dcd7ba; /* Default text color */
 }
 
 window#waybar {
     all: unset;
-}
+    background: #252535; /* Updated background bar color */
+    margin: 10px;       /* Added margin for visible rounded corners */
+    padding: 0;
+    border-radius: 8px; /* Rounds the entire bar */
+    }
 
 /* Group styles with dark background and rounded corners */
 .modules-left,
@@ -17,156 +20,144 @@ window#waybar {
     padding: 4px 8px;       /* Extra horizontal padding for a nicer rounded area */
     margin: 3px;
     border-radius: 8px;
-    background: @mantle;    /* Dark background from mocha.css */
+    background: #252535;    /* Use background bar color */
     box-shadow: none;
 }
 
 /* Tooltip style */
 tooltip {
     background: #2A1A30; /* Dark pinkish background */
-    color: #D1A8D1;      /* Light pink text */
+    color: #dcd7ba;      /* Updated text color */
 }
 
 /*
-  Since Waybar does not support the CSS 'filter' property,
-  we override each module’s color on hover with a manually computed, darker color.
+  Override each module’s color to default to #dcd7ba and on hover 40% darker (#848170).
 */
 
-/* #custom-notification (Blue: original @blue = #89b4fa) */
+/* #custom-notification */
 #custom-notification {
     padding: 2px 4px;
-    color: @blue; /* #89b4fa */
+    color: #dcd7ba;
     transition: all .3s ease;
     background: none;
 }
 #custom-notification:hover {
-    /* Darkened by ~30%: (137,180,250) * 0.7 → (96,126,175) = #607eaf */
-    color: #607eaf;
+    color: #848170;
 }
 
-/* #clock (Green: original @green = #a6e3a1) */
+/* #clock */
 #clock {
     padding: 2px 4px;
-    color: @green; /* #a6e3a1 */
+    color: #dcd7ba;
     transition: all .3s ease;
     background: none;
     border-radius: 0 1rem 1rem 0;
     margin-right: 1rem;
 }
 #clock:hover {
-    /* (166,227,161) * 0.7 → (116,159,113) = #749f71 */
-    color: #749f71;
+    color: #848170;
 }
 
-/* #custom-pacman (Yellow: original @yellow = #f9e2af) */
+/* #custom-pacman */
 #custom-pacman {
     padding: 2px 4px;
-    color: @yellow; /* #f9e2af */
+    color: #dcd7ba;
     transition: all .3s ease;
     background: none;
 }
 #custom-pacman:hover {
-    /* (249,226,175) * 0.7 → (174,158,123) = #ae9e7b */
-    color: #ae9e7b;
+    color: #848170;
 }
 
-/* #bluetooth (Pink: original @pink = #f5c2e7) */
+/* #bluetooth */
 #bluetooth {
     padding: 2px 4px;
-    color: @pink; /* #f5c2e7 */
+    color: #dcd7ba;
     transition: all .3s ease;
     background: none;
 }
 #bluetooth:hover {
-    /* (245,194,231) * 0.7 → (172,136,162) = #ac88a2 */
-    color: #ac88a2;
+    color: #848170;
 }
 
-/* #network (Teal: original @teal = #94e2d5) */
+/* #network */
 #network {
     padding: 2px 4px;
-    color: @teal; /* #94e2d5 */
+    color: #dcd7ba;
     transition: all .3s ease;
     background: none;
 }
 #network:hover {
-    /* (148,226,213) * 0.7 → (104,158,149) = #689e95 */
-    color: #689e95;
+    color: #848170;
 }
 
-/* #battery (Peach: original @peach = #fab387) */
+/* #battery */
 #battery {
     padding: 2px 4px;
-    color: @peach; /* #fab387 */
+    color: #dcd7ba;
     transition: all .3s ease;
     background: none;
 }
 #battery:hover {
-    /* (250,179,135) * 0.7 → (175,125,95) = #af7d5f */
-    color: #af7d5f;
+    color: #848170;
 }
 
-/* #cpu (Lavender: original @lavender = #b4befe) */
+/* #cpu */
 #cpu {
     padding: 2px 4px;
-    color: @lavender; /* #b4befe */
+    color: #dcd7ba;
     transition: all .3s ease;
     background: none;
 }
 #cpu:hover {
-    /* (180,190,254) * 0.7 → (126,133,178) = #7e85b2 */
-    color: #7e85b2;
+    color: #848170;
 }
 
-/* #memory (Sapphire: original @sapphire = #74c7ec) */
+/* #memory */
 #memory {
     padding: 2px 4px;
-    color: @sapphire; /* #74c7ec */
+    color: #dcd7ba;
     transition: all .3s ease;
     background: none;
 }
 #memory:hover {
-    /* (116,199,236) * 0.7 → (81,139,165) = #518ba5 */
-    color: #518ba5;
+    color: #848170;
 }
 
-/* #temperature (Maroon: original @maroon = #eba0ac) */
+/* #temperature */
 #temperature {
     padding: 2px 4px;
-    color: @maroon; /* #eba0ac */
+    color: #dcd7ba;
     transition: all .3s ease;
     background: none;
 }
 #temperature:hover {
-    /* (235,160,172) * 0.7 → (165,112,120) = #a57078 */
-    color: #a57078;
+    color: #848170;
 }
 
-/* #wireplumber (Mauve: original @mauve = #cba6f7) */
+/* #wireplumber */
 #wireplumber {
     padding: 2px 4px;
-    color: @mauve; /* #cba6f7 */
+    color: #dcd7ba;
     transition: all .3s ease;
     background: none;
 }
 #wireplumber:hover {
-    /* (203,166,247) * 0.7 → (142,116,173) = #8e74ad */
-    color: #8e74ad;
+    color: #848170;
 }
 
-/* #mpris (Flamingo: original @flamingo = #f2cdcd) */
+/* #mpris */
 #mpris {
     padding: 2px 4px;
-    color: @flamingo; /* #f2cdcd */
+    color: #dcd7ba;
     transition: all .3s ease;
     background: none;
 }
 #mpris:hover {
-    /* (242,205,205) * 0.7 → (169,144,144) = #a99090 */
-    color: #a99090;
+    color: #848170;
 }
 
-/* Workspaces (kept original colors) */
+/* Workspaces */
 #workspaces {
     padding: 0px 3px;
 }
@@ -174,19 +165,19 @@ tooltip {
 #workspaces button {
     all: unset;
     padding: 2px 4px;
-    color: rgba(255, 255, 255, 0.5); /* Slightly faded white */
+    color: #dcd7ba;
     transition: all .2s ease;
 }
 
 #workspaces button:hover {
-    color: rgba(255, 255, 255, 1);
+    color: #848170;
     border: none;
     text-shadow: 0px 0px 1.5px rgba(255, 255, 255, 0.5);
     transition: all 1s ease;
 }
 
 #workspaces button.active {
-    color: #81A4F4; /* Soft blue for active workspace */
+    color: #81A4F4; /* Soft blue for active workspace remains unchanged */
     border: none;
     text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
 }
@@ -199,15 +190,15 @@ tooltip {
 
 /* Battery status */
 #battery.charging {
-    color: #7E57C2; /* Purple charging status */
+    color: #dcd7ba;
 }
 
 #battery.warning:not(.charging) {
-    color: #FF80AB; /* Pinkish warning color */
+    color: #dcd7ba;
 }
 
 #battery.critical:not(.charging) {
-    color: #F50057; /* Bright pink for critical */
+    color: #dcd7ba;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -237,12 +228,12 @@ tooltip {
 }
 
 #custom-expand {
-    color: rgba(255, 255, 255, 0.2); /* Slightly faded white */
+    color: #dcd7ba;
     text-shadow: 0px 0px 2px rgba(0, 0, 0, .7);
 }
 
 #custom-expand:hover {
-    color: rgba(255, 255, 255, 0.2);
+    color: #848170;
     text-shadow: 0px 0px 2px rgba(255, 255, 255, .5);
 }
 
