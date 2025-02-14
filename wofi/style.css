@@ -2,13 +2,13 @@
 
 /* Define your colors using your provided palette */
 @define-color bg-col       #252535;  /* Main background */
-@define-color bg-col-light #252535;  /* Lighter background (same as main for consistency) */
-@define-color border-col   #252535;  /* Border color */
-@define-color selected-col #99bab9;  /* Selected background becomes our accent color */
-@define-color blue         #E4ACB2;  /* Prompt background and interactive accent */
-@define-color fg-col       #FAEDCD;  /* Primary foreground (text) color */
+@define-color bg-col-light #3A3960;  /* Lighter background for buttons/textboxes */
+@define-color border-col   #3D8D7A;  /* Border color */
+@define-color selected-col #A9BFA8;  /* Selected background (accent) */
+@define-color blue         #FAFFC5;  /* Prompt background and interactive accent */
+@define-color fg-col       #FBFFE4;  /* Primary foreground (text) color */
 @define-color fg-col2      #252535;  /* Inverse for selected text (for contrast) */
-@define-color grey         #99BAB9;  /* Used for button text and such */
+@define-color grey         #5E686D;  /* Used for button text and similar elements */
 
 /* Base styling for all elements */
 * {
@@ -128,4 +128,3 @@ button:selected {
     background-color: @bg-col-light;
     color: @blue;
 }
-

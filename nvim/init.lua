@@ -41,47 +41,50 @@ require("lazyvim.util").on_very_lazy(function()
   vim.opt.termguicolors = true
 
   -- (Optional) Clear any previous highlight settings from LazyVim.
-  -- Note: Using "hi clear" will reset all highlight groups.
   vim.cmd("hi clear")
 
-  -- Provided colors:
-  -- A: #E4ACB2
-  -- B: #EABCA8
-  -- C: #FAEDCD
-  -- D: #CCD5AE
-  -- E: #99BAB9
-  -- F: #252535
+  ------------------------------------------------------------------
+  -- Main Syntax/Editor Colors
+  ------------------------------------------------------------------
+  -- Using these provided colors:
+  --   #252535, #FBFFE4, #A9BFA8, #5E686D, #B3D8A8, #A3D1C6
   --
-  -- Assigned highlight groups:
-  -- Normal:   fg = C, bg = F
-  -- Statement: fg = A
-  -- Comment:   fg = B (italicized)
-  -- Constant:  fg = D
-  -- Identifier:fg = E
-  -- LineNr:    fg = A  (duplicate with Statement)
-  -- Visual:    bg = B  (duplicate with Comment)
+  -- Mapping:
+  --   Normal:     fg = #FBFFE4, bg = #252535
+  --   Statement:  fg = #A9BFA8
+  --   Comment:    fg = #5E686D (italicized)
+  --   Constant:   fg = #B3D8A8
+  --   Identifier: fg = #A3D1C6
+  --   LineNr:     fg = #A9BFA8  (same as Statement)
+  --   Visual:     bg = #5E686D  (same as Comment)
+  vim.api.nvim_set_hl(0, "Normal", { fg = "#FBFFE4", bg = "#252535" })
+  vim.api.nvim_set_hl(0, "Statement", { fg = "#A9BFA8" })
+  vim.api.nvim_set_hl(0, "Comment", { fg = "#5E686D", italic = true })
+  vim.api.nvim_set_hl(0, "Constant", { fg = "#B3D8A8" })
+  vim.api.nvim_set_hl(0, "Identifier", { fg = "#A3D1C6" })
+  vim.api.nvim_set_hl(0, "LineNr", { fg = "#A9BFA8" })
+  vim.api.nvim_set_hl(0, "Visual", { bg = "#5E686D" })
 
-  -- Normal text
-  vim.api.nvim_set_hl(0, "Normal", { fg = "#FAEDCD", bg = "#252535" })
-
-  -- Keywords/Statements
-  vim.api.nvim_set_hl(0, "Statement", { fg = "#E4ACB2" })
-
-  -- Comments (italicized)
-  vim.api.nvim_set_hl(0, "Comment", { fg = "#EABCA8", italic = true })
-
-  -- Constants
-  vim.api.nvim_set_hl(0, "Constant", { fg = "#CCD5AE" })
-
-  -- Identifiers
-  vim.api.nvim_set_hl(0, "Identifier", { fg = "#99BAB9" })
-
-  -- Line numbers (shares the same color as Statement)
-  vim.api.nvim_set_hl(0, "LineNr", { fg = "#E4ACB2" })
-
-  -- Visual selection (shares the same color as Comment)
-  vim.api.nvim_set_hl(0, "Visual", { bg = "#EABCA8" })
+  ------------------------------------------------------------------
+  -- Additional LazyVim / lazy.nvim UI Colors
+  ------------------------------------------------------------------
+  -- Here we use the leftover colors: #FAFFC5, #3A3960, #3D8D7A
+  --
+  -- For example, these groups control parts of the lazy.nvim UI:
+  --   - LazyNormal: The main area of lazy.nvim windows.
+  --   - LazyBorder: The border surrounding lazy.nvim windows.
+  --   - LazyButton: Buttons in the lazy.nvim UI.
+  --   - LazyButtonActive: Active state for buttons.
+  --   - LazyTitle: Titles for lazy.nvim windows.
+  --
+  -- Adjust the group names if your LazyVim version uses different ones.
+  vim.api.nvim_set_hl(0, "LazyNormal", { fg = "#FAFFC5", bg = "#3A3960" })
+  vim.api.nvim_set_hl(0, "LazyBorder", { fg = "#3D8D7A", bg = "#3A3960" })
+  vim.api.nvim_set_hl(0, "LazyButton", { fg = "#A9BFA8", bg = "#5E686D" })
+  vim.api.nvim_set_hl(0, "LazyButtonActive", { fg = "#FBFFE4", bg = "#252535", bold = true })
+  vim.api.nvim_set_hl(0, "LazyTitle", { fg = "#B3D8A8", bg = "#3D8D7A" })
 end)
 
 vim.opt.number = true
 vim.opt.relativenumber = false
+

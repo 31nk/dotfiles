@@ -30,7 +30,7 @@
     },
     "custom/notification": {
         "tooltip": false,
-        "format": " ",  // NixOS icon (from Nerd Fonts)
+        "format": "",  // NixOS icon (from Nerd Fonts)
         "on-click": "swaync-client -t -sw",
         "escape": true
     },

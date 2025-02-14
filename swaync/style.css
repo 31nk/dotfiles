@@ -1,10 +1,10 @@
 @define-color base         #252535;  /* F */
-@define-color text         #FAEDCD;  /* C */
+@define-color text         #FBFFE4;  /* C */
 @define-color surface0     #252535;  /* F */
 @define-color surface1     #252535;  /* F */
 @define-color surface2     #252535;  /* F */
-@define-color mtext        #E4ACB2;  /* A */
-@define-color mycolor      #EABCA8;  /* B */
+@define-color mtext        #A9BFA8;  /* A */
+@define-color mycolor      #FAFFC5;  /* B */
 @define-color bg           #252535;  /* F */
 @define-color bg-hover     #252535;  /* F */
 @define-color mpris-album-art-overlay  alpha(@bg, 0.55);
@@ -35,6 +35,7 @@
 .control-center .notification-row .notification-background .notification .notification-content,
 .floating-notifications .notification-row .notification-background .notification,
 .floating-notifications.background .notification-background .notification .notification-content {
+    /* no changes */
 }
 
 .notification {
@@ -97,18 +98,18 @@
 /* Updated critical notification colors using our palette */
 .control-center .notification-row .notification-background .notification.critical .notification-content,
 .floating-notifications.background .notification-background .notification.critical .notification-content {
-    background-color: #E4ACB2;  /* A */
+    background-color: #A9BFA8;  /* A */
 }
 
 .control-center .notification-row .notification-background .notification.critical .notification-content image,
 .floating-notifications.background .notification-background .notification.critical .notification-content image {
     background-color: unset;
-    color: #E4ACB2;  /* A */
+    color: #A9BFA8;  /* A */
 }
 
 .control-center .notification-row .notification-background .notification.critical .notification-content label,
 .floating-notifications.background .notification-background .notification.critical .notification-content label {
-    color: #FAEDCD;  /* C */
+    color: #FBFFE4;  /* C */
 }
 
 .notification-content {
@@ -292,13 +293,13 @@
 /* Updated to use provided colors */
 .widget-buttons-grid > flowbox > flowboxchild > button label {
     font-size: 20px;
-    color: #E4ACB2;  /* A */
+    color: #A9BFA8;  /* A */
     transition: all 0.7s ease;
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button:hover label {
     font-size: 20px;
-    color: #FAEDCD;  /* C */
+    color: #FBFFE4;  /* C */
     transition: all 0.7s ease;
 }
 
@@ -311,7 +312,6 @@
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button:hover {
-    /* Replace undefined @color4 with a transparent variant of mycolor */
     background: alpha(@mycolor, 0.2);
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
     transition: all 0.5s ease;
@@ -343,14 +343,14 @@ trough {
 /* Updated trough highlight to use provided accents */
 trough highlight {
     padding: 5px;
-    background: #E4ACB2;  /* A */
+    background: #A9BFA8;  /* A */
     border-radius: 20px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
     transition: all 0.7s ease;
 }
 trough highlight:hover {
     padding: 5px;
-    background: #EABCA8;  /* B */
+    background: #FAFFC5;  /* B */
     border-radius: 20px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
     transition: all 0.7s ease;
