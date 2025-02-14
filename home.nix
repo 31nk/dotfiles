@@ -13,7 +13,8 @@
     pkgs.foot
     pkgs.wofi
     pkgs.fzf
-    pkgs.fish  # Add fish package
+    pkgs.fish      # Add Fish package
+    pkgs.starship  # Add Starship package
   ];
 
   home.file = {
@@ -23,23 +24,28 @@
     ".config/swaync".source = ~/dotfiles/swaync;
     ".config/foot".source = ~/dotfiles/foot;
     ".config/wofi".source = ~/dotfiles/wofi;
-     
-    
+
+    # Create a file in Fish's conf.d to initialize Starship.
+    ".config/fish/conf.d/starship.fish".text = ''
+      starship init fish | source
+    '';
+
+    # Symlink Starship configuration from your dotfiles.
+    ".config/starship.toml".source = ~/dotfiles/starship.toml;
   };
 
   home.sessionVariables = {};
   programs.home-manager.enable = true;
 
-  # Fish shell configuration
+  # Fish shell configuration.
   programs.fish = {
     enable = true;
-    package = pkgs.fish;  # Explicitly enable the Fish package
+    package = pkgs.fish;
     shellAliases = {
-      rebuild = "sudo nixos-rebuild switch --flake ~/nixos-config/#nixos";
-      upgrade = "sudo nixos-rebuild switch --upgrade --flake ~/nixos-config/#nixos";
+      rebuild    = "sudo nixos-rebuild switch --flake ~/nixos-config/#nixos";
+      upgrade    = "sudo nixos-rebuild switch --upgrade --flake ~/nixos-config/#nixos";
       clearcache = "fc-cache -f -v";
-      home = "home-manager switch";
+      home       = "home-manager switch";
     };
   };
 }
-
