@@ -8,7 +8,7 @@
 
 window#waybar {
     all: unset;
-    background: #3A3960; /* Bar background */
+    background: #252535; /* Bar background */
     margin: 10px;
     padding: 0;
     border-radius: 8px;
@@ -21,7 +21,7 @@ window#waybar {
     padding: 4px 8px;
     margin: 3px;
     border-radius: 8px;
-    background: #252535; /* Container background */
+    background: #3A3960; /* Container background */
     box-shadow: none;
 }
 
