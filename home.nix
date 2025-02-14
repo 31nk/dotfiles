@@ -13,8 +13,8 @@
     pkgs.foot
     pkgs.wofi
     pkgs.fzf
-    pkgs.fish      # Add Fish package
-    pkgs.starship  # Add Starship package
+    pkgs.fish      
+    pkgs.starship  
   ];
 
   home.file = {
@@ -25,22 +25,27 @@
     ".config/foot".source = ~/dotfiles/foot;
     ".config/wofi".source = ~/dotfiles/wofi;
 
-    # Create a file in Fish's conf.d to initialize Starship.
     ".config/fish/conf.d/starship.fish".text = ''
       starship init fish | source
     '';
 
-    # Symlink Starship configuration from your dotfiles.
+    
     ".config/starship.toml".source = ~/dotfiles/starship.toml;
   };
 
-  home.sessionVariables = {};
+  home.sessionVariables = {
+    EDITOR = "nvim";
+  };
   programs.home-manager.enable = true;
 
-  # Fish shell configuration.
+  
   programs.fish = {
     enable = true;
     package = pkgs.fish;
+    shellInit = ''
+      set -x EDITOR nvim
+      set -x VISUAL nvim
+      '';
     shellAliases = {
       rebuild    = "sudo nixos-rebuild switch --flake ~/nixos-config/#nixos";
       upgrade    = "sudo nixos-rebuild switch --upgrade --flake ~/nixos-config/#nixos";
