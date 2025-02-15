@@ -1,15 +1,17 @@
-@define-color base         #252535;  /* F */
-@define-color text         #FBFFE4;  /* C */
-@define-color surface0     #252535;  /* F */
-@define-color surface1     #252535;  /* F */
-@define-color surface2     #252535;  /* F */
-@define-color mtext        #A9BFA8;  /* A */
-@define-color mycolor      #FAFFC5;  /* B */
-@define-color bg           #252535;  /* F */
-@define-color bg-hover     #252535;  /* F */
-@define-color mpris-album-art-overlay  alpha(@bg, 0.55);
+@define-color base         #354259;  /* F */
+@define-color text         #ECE5C7;  /* C */
+@define-color surface0     #354259;  /* F */
+@define-color surface1     #354259;  /* F */
+@define-color surface2     #354259;  /* F */
+@define-color mtext        #C2DED1;  /* A */
+@define-color mycolor      #CDC2AE;  /* B */
+@define-color bg           #354259;  /* F */
+@define-color bg-hover     #354259;  /* F */
+
+/* Updated MPRIS overlay color to use our accent A with 55% opacity */
+@define-color mpris-album-art-overlay  alpha(#C2DED1, 0.55);
 @define-color mpris-button-hover       alpha(@bg, 0.50);
-@define-color border-color alpha(@mycolor, 0.15);
+@define-color border-color             alpha(@mycolor, 0.15);
 
 @keyframes fadeIn {
     0% {
@@ -98,18 +100,18 @@
 /* Updated critical notification colors using our palette */
 .control-center .notification-row .notification-background .notification.critical .notification-content,
 .floating-notifications.background .notification-background .notification.critical .notification-content {
-    background-color: #A9BFA8;  /* A */
+    background-color: #C2DED1;  /* A */
 }
 
 .control-center .notification-row .notification-background .notification.critical .notification-content image,
 .floating-notifications.background .notification-background .notification.critical .notification-content image {
     background-color: unset;
-    color: #A9BFA8;  /* A */
+    color: #C2DED1;  /* A */
 }
 
 .control-center .notification-row .notification-background .notification.critical .notification-content label,
 .floating-notifications.background .notification-background .notification.critical .notification-content label {
-    color: #FBFFE4;  /* C */
+    color: #ECE5C7;  /* C */
 }
 
 .notification-content {
@@ -280,6 +282,11 @@
     background-color: @mpris-button-hover;
 }
 
+.widget-mpris .widget-mpris-player > box > button {
+    background: transparent;
+    border: none;
+}
+
 .widget-buttons-grid {
     font-family: "CodeNewRoman Nerd Font Propo";
     padding-left: 8px;
@@ -293,13 +300,13 @@
 /* Updated to use provided colors */
 .widget-buttons-grid > flowbox > flowboxchild > button label {
     font-size: 20px;
-    color: #A9BFA8;  /* A */
+    color: #C2DED1;  /* A */
     transition: all 0.7s ease;
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button:hover label {
     font-size: 20px;
-    color: #FBFFE4;  /* C */
+    color: #ECE5C7;  /* C */
     transition: all 0.7s ease;
 }
 
@@ -343,14 +350,14 @@ trough {
 /* Updated trough highlight to use provided accents */
 trough highlight {
     padding: 5px;
-    background: #A9BFA8;  /* A */
+    background: #C2DED1;  /* A */
     border-radius: 20px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
     transition: all 0.7s ease;
 }
 trough highlight:hover {
     padding: 5px;
-    background: #FAFFC5;  /* B */
+    background: #CDC2AE;  /* B */
     border-radius: 20px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
     transition: all 0.7s ease;

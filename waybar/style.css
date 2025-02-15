@@ -1,231 +1,97 @@
 /* Global defaults */
 * {
-    font-size: 15px; /* Smaller font size */
+    font-size: 15px;
     font-family: "CodeNewRoman Nerd Font Propo";
     font-weight: bold;
-    color: #FBFFE4; /* Global text: C */
 }
 
+/* Waybar window background */
 window#waybar {
     all: unset;
-    background: #252535; /* Bar background */
+    background: #354259; /* Dark background */
     margin: 10px;
     padding: 0;
     border-radius: 8px;
 }
 
-/* Group styles with dark background and rounded corners */
+/* Module containers */
 .modules-left,
 .modules-center,
 .modules-right {
     padding: 4px 8px;
     margin: 3px;
     border-radius: 8px;
-    background: #3A3960; /* Container background */
-    box-shadow: none;
+    background: #354259; /* Dark background */
 }
 
-/* Tooltip style */
+/* Tooltip */
 tooltip {
-    background: #252535;
-    color: #FBFFE4;
+    background: #354259; /* Dark background */
+    color: #ECE5C7;     /* Light text */
 }
 
-/* --- Module color overrides (text colors, hover effects, etc.) --- */
+/* --- Module Text and Background --- */
 
+/* Custom Notification */
 #custom-notification {
     padding: 2px 4px;
-    color: #A9BFA8; /* A */
-    transition: all 0.3s ease;
-    background: none;
-}
-#custom-notification:hover { 
-    color: #FAFFC5; /* B */ 
+    color: #ECE5C7; /* Off-white for text */
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='20'><rect width='100%' height='20' rx='10' ry='10' fill='%23354259' stroke='%23000000' stroke-width='1'/></svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90% 20px;
 }
 
+/* Clock */
 #clock {
     padding: 2px 4px;
-    color: #A9BFA8; /* B */
-    transition: all 0.3s ease;
-    background: none;
-    border-radius: 0 1rem 1rem 0;
-    margin-right: 1rem;
-}
-#clock:hover { 
-    color: #FBFFE4; /* C */ 
+    color: #ECE5C7; /* Off-white text */
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='20'><rect width='100%' height='20' rx='10' ry='10' fill='%23354259' stroke='%23000000' stroke-width='1'/></svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90% 20px;
 }
 
+/* CPU */
 #cpu {
     padding: 2px 4px;
-    color: #FAFFC5; /* B */
-    transition: all 0.3s ease;
-    background: none;
-}
-#cpu:hover { 
-    color: #FBFFE4; /* C */ 
-}
-
-#memory {
-    padding: 2px 4px;
-    color: #FBFFE4; /* C */
-    transition: all 0.3s ease;
-    background: none;
-}
-#memory:hover { 
-    color: #B3D8A8; /* D */ 
+    color: #C2DED1; /* Light mint for text */
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='20'><rect width='100%' height='20' rx='10' ry='10' fill='%23354259' stroke='%23000000' stroke-width='1'/></svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90% 20px;
 }
 
-#temperature {
-    padding: 2px 4px;
-    color: #B3D8A8; /* D */
-    transition: all 0.3s ease;
-    background: none;
-}
-#temperature:hover { 
-    color: #3D8D7A; /* E */ 
-}
-
+/* Wireplumber */
 #wireplumber {
     padding: 2px 4px;
-    color: #3D8D7A; /* E */
-    transition: all 0.3s ease;
-    background: none;
-}
-#wireplumber:hover { 
-    color: #A9BFA8; /* A */ 
+    color: #ECE5C7; /* Off-white for text */
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='20'><rect width='100%' height='20' rx='10' ry='10' fill='%23354259' stroke='%23000000' stroke-width='1'/></svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90% 20px;
 }
 
+/* MPRIS */
 #mpris {
     padding: 2px 4px;
-    color: #A9BFA8; /* A */
-    transition: all 0.3s ease;
-    background: none;
-}
-#mpris:hover { 
-    color: #FAFFC5; /* B */ 
+    color: #CDC2AE; /* Light beige for text */
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='20'><rect width='100%' height='20' rx='10' ry='10' fill='%23354259' stroke='%23000000' stroke-width='1'/></svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90% 20px;
 }
 
-/* --- Workspaces Section --- */
+/* --- Workspace Buttons --- */
 #workspaces {
-    padding: 0px 3px;
+    padding: 0 3px;
 }
 
 #workspaces button {
-    all: unset;
     padding: 2px 4px;
-    color: #FAFFC5;  /* B */
+    margin-right: 4px; /* Controls spacing between buttons */
+    color: #ECE5C7;   /* Off-white text */
+    background: #354259; /* Dark background */
     transition: all 0.2s ease;
-}
-#workspaces button:hover {
-    color: #FBFFE4;  /* C */
     border: none;
-    text-shadow: 0px 0px 1.5px rgba(251,255,228,0.5);
-}
-#workspaces button.active {
-    color: #FAFFC5;  /* B */
-    border: none;
-    text-shadow: 0px 0px 2px rgba(0,0,0,0.5);
-}
-#workspaces button.empty {
-    color: rgba(250,252,197,0);
-    border: none;
-    text-shadow: 0px 0px 1.5px rgba(250,252,197,0.2);
-}
-
-/* --- Battery status removed (unused) --- */
-
-/* --- Expand and tray modules --- */
-#group-expand,
-#custom-expand,
-#custom-colorpicker,
-#cpu,
-#memory,
-#temperature {
-    padding: 2px 4px;
-    transition: all 0.3s ease;
-}
-#custom-expand {
-    color: #FBFFE4; /* C */
-    text-shadow: 0px 0px 2px rgba(0,0,0,0.7);
-}
-#custom-expand:hover {
-    color: #A9BFA8; /* A */
-    text-shadow: 0px 0px 2px rgba(251,255,228,0.5);
-}
-#custom-endpoint {
-    color: transparent;
-    text-shadow: 0px 0px 1.5px rgba(0,0,0,1);
-}
-
-/* --- Tray styles --- */
-#tray {
-    padding: 2px 4px;
-    transition: all 0.3s ease;
-}
-#tray menu * {
-    padding: 2px 4px;
-    transition: all 0.3s ease;
-}
-#tray menu separator {
-    padding: 2px 4px;
-    transition: all 0.3s ease;
-}
-
-/* --- Module Background Bars (Inline SVG) --- */
-/* Each remaining module gets its own inline SVG background (a 20px tall rounded rectangle with 10px corner radii) */
-
-/* #custom-notification background: #FAFFC5 */
-#custom-notification {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='20'><rect width='100%' height='20' rx='10' ry='10' fill='%23FAFFC5'/></svg>");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 90% 20px;
-}
-
-/* #clock background: #A9BFA8 */
-#clock {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='20'><rect width='100%' height='20' rx='10' ry='10' fill='%23A9BFA8'/></svg>");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 90% 20px;
-}
-
-/* #cpu background: #A3D1C6 */
-#cpu {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='20'><rect width='100%' height='20' rx='10' ry='10' fill='%23A3D1C6'/></svg>");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 90% 20px;
-}
-
-/* #memory background: #FAFFC5 */
-#memory {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='20'><rect width='100%' height='20' rx='10' ry='10' fill='%23FAFFC5'/></svg>");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 90% 20px;
-}
-
-/* #temperature background: #A9BFA8 */
-#temperature {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='20'><rect width='100%' height='20' rx='10' ry='10' fill='%23A9BFA8'/></svg>");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 90% 20px;
-}
-
-/* #wireplumber background: #5E686D */
-#wireplumber {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='20'><rect width='100%' height='20' rx='10' ry='10' fill='%235E686D'/></svg>");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 90% 20px;
-}
-
-/* #mpris background: #3D8D7A */
-#mpris {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='20'><rect width='100%' height='20' rx='10' ry='10' fill='%233D8D7A'/></svg>");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 90% 20px;
 }

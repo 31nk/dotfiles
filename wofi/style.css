@@ -1,14 +1,14 @@
 /* Rofi-inspired Wofi theme with custom colors */
 
 /* Define your colors using your provided palette */
-@define-color bg-col       rgba(37, 37, 53, 0.75);  /* Main background with 75% opacity */
-@define-color bg-col-light #3A3960;  /* Lighter background for buttons/textboxes */
-@define-color border-col   #3D8D7A;  /* Border color */
-@define-color selected-col #A9BFA8;  /* Selected background (accent) */
-@define-color blue         #FAFFC5;  /* Prompt background and interactive accent */
-@define-color fg-col       #FBFFE4;  /* Primary foreground (text) color */
-@define-color fg-col2      #252535;  /* Inverse for selected text (for contrast) */
-@define-color grey         #5E686D;  /* Used for button text and similar elements */
+@define-color bg-col       #354259;   /* Main background (dark) */
+@define-color bg-col-light #354259;   /* Lighter background for buttons/textboxes (using dark for uniformity) */
+@define-color border-col   #CDC2AE;   /* Border color (mid-tone) */
+@define-color selected-col #C2DED1;   /* Selected background (accent) */
+@define-color blue         #C2DED1;   /* Prompt background and interactive accent */
+@define-color fg-col       #ECE5C7;   /* Primary foreground (text) color (light) */
+@define-color fg-col2      #354259;   /* Inverse for selected text (for contrast) */
+@define-color grey         #ECE5C7;   /* Used for button text and similar elements */
 
 /* Base styling for all elements */
 * {
@@ -128,4 +128,3 @@ button:selected {
     background-color: @bg-col-light;
     color: @blue;
 }
-
