@@ -89,8 +89,8 @@ tooltip {
 
 #workspaces button {
     padding: 2px 4px;
-    margin-right: 4px; /* Controls spacing between buttons */
-    color: #ECE5C7;   /* Off-white text */
+    margin-right: 0.5px; /* Controls spacing between buttons */
+    color: #c2ded1;   /* Off-white text */
     background: #354259; /* Dark background */
     transition: all 0.2s ease;
     border: none;
