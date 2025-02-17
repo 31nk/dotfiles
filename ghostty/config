@@ -1,0 +1,50 @@
+
+
+background-opacity = 1
+
+background-blur = true
+
+window-subtitle = working-directory
+
+clipboard-read = allow
+clipboard-write = allow
+
+confirm-close-surface = false
+
+quit-after-last-window-closed = true
+
+shell-integration = fish
+
+cursor-click-to-move = true
+
+link-url = true 
+
+
+[colors]
+foreground = "#FFFFFF"       # Foreground text color
+background = "#101010"       # Background color
+cursor     = "#FFC799"       # Cursor color
+
+# Standard ANSI colors
+ansi = [
+  "#101010",   # Black
+  "#F5A191",   # Red
+  "#90B99F",   # Green
+  "#E6B99D",   # Yellow
+  "#E29ECA",   # Blue
+  "#EA83A5",   # Magenta
+  "#7E7E7E",   # Cyan
+  "#FFFFFF"    # White
+]
+
+# Bright ANSI colors
+bright = [
+  "#A0A0A0",   # Bright Black (Gray)
+  "#FF8080",   # Bright Red (Coral)
+  "#99FFE4",   # Bright Green (Aqua Mint)
+  "#FFC799",   # Bright Yellow (Apricot/Peach)
+  "#B9AEDA",   # Bright Blue (Pastel Purple)
+  "#ECAAD6",   # Bright Magenta (Soft Pink)
+  "#F591B2",   # Bright Cyan (Warm Pink)
+  "#FFFFFF"    # Bright White
+]

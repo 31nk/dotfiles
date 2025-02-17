@@ -15,6 +15,7 @@
     pkgs.fzf
     pkgs.fish
     pkgs.starship
+    
   ];
 
   home.file = {
@@ -24,6 +25,7 @@
     ".config/swaync" = { source = ~/dotfiles/swaync; };
     ".config/foot" = { source = ~/dotfiles/foot; };
     ".config/wofi" = { source = ~/dotfiles/wofi; };
+    
 
     ".config/fish/conf.d/starship.fish" = {
       text = ''

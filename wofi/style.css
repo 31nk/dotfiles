@@ -1,130 +1,75 @@
-/* Rofi-inspired Wofi theme with custom colors */
-
-/* Define your colors using your provided palette */
-@define-color bg-col       #354259;   /* Main background (dark) */
-@define-color bg-col-light #354259;   /* Lighter background for buttons/textboxes (using dark for uniformity) */
-@define-color border-col   #CDC2AE;   /* Border color (mid-tone) */
-@define-color selected-col #C2DED1;   /* Selected background (accent) */
-@define-color blue         #C2DED1;   /* Prompt background and interactive accent */
-@define-color fg-col       #ECE5C7;   /* Primary foreground (text) color (light) */
-@define-color fg-col2      #354259;   /* Inverse for selected text (for contrast) */
-@define-color grey         #ECE5C7;   /* Used for button text and similar elements */
-
-/* Base styling for all elements */
-* {
-    all: unset;
-    font-family: 'JetBrainsMono Nerd Font', monospace;
-    font-size: 14px;
-    background-color: transparent;
-    color: @fg-col;
+/* The name of the window itself */
+#window {
+  background-color: rgba(16, 16, 16, 0.8); /* using #101010 with 0.8 opacity */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 
+              0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  border: 2px solid @border-col; /* Border around the whole window (using #FFC799) */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* The main window */
-window {
-    all: unset;
-    width: 600px;
-    height: 360px;
-    padding: 20px;
-    border-radius: 15px;
-    background-color: @bg-col;
-    border: 3px solid @border-col;
+/* The name of the box that contains everything */
+#window #outer-box {
+  width: 100%;
+  /* No additional styling needed here unless desired */
 }
 
-/* Optional inner containers */
-#inner-box {
-    margin: 2px;
-    padding: 5px;
+/* The search bar (input container) */
+#window #outer-box #input {
+  background-color: rgba(16, 16, 16, 0.8); /* using our base color */
+  color: #FFFFFF;                          /* primary foreground */
+  border: 2px solid #90B99F;                /* Border for the search bar using a different color */
+  padding: 0.8rem 1rem;
+  font-size: 1.5rem;
+  border-radius: 1rem 1rem 0 0;              /* Rounded top corners, square bottom */
+  margin: 1rem auto;                        /* Center the search bar horizontally */
+  width: calc(100% - 2rem);                 /* Adjust width relative to the window, with some margin */
 }
 
-#outer-box {
-    /* No additional styling – customize if needed */
+#window #outer-box #input:focus,
+#window #outer-box #input:focus-visible,
+#window #outer-box #input:active {
+  border: 2px solid #90B99F;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
-/* Scrollable list container (for listview items) */
-#scroll {
-    margin: 10px 0 0 20px;
-    padding: 6px 0 0;
-    background-color: @bg-col;
+/* The container holding all the entries (apps container) */
+#window #outer-box #scroll {
+  margin: 10px auto 0;              /* Center horizontally */
+  padding: 20px;                    /* Increased padding to enlarge the container */
+  background-color: rgba(16, 16, 16, 0.8);
+  width: calc(100% - 2rem);           /* Maintain the width relative to the window */
+  box-sizing: border-box;           /* Include padding in width calculation */
+  border-radius: 1rem;              /* Rounded corners for the container */
 }
 
-/* Input area: container for the prompt and search entry */
-#input {
-    all: unset;
-    margin: 20px;
-    padding: 2px;
-    background-color: @bg-col;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
+/* The container for all entries (and any expanded sub-actions) */
+#window #outer-box #scroll #inner-box {
+  /* No additional styling by default */
 }
 
-/* Prompt (a label in front of your entry field) */
-#prompt {
-    background-color: @blue;
-    padding: 6px;
-    border-radius: 3px;
-    margin-right: 10px;
-    color: @bg-col;
+/* Each entry in the list */
+#window #outer-box #scroll #inner-box #entry {
+  color: #FFFFFF; /* white text */
+  background-color: rgba(16, 16, 16, 0.1); /* a very light transparent version of our base */
+  padding: 0.6rem 1rem;
+  /* No individual border */
 }
 
-/* A text element (if needed) */
-#text {
-    margin: 5px;
-    color: @fg-col;
+/* Images inside entries (if using image mode) */
+#window #outer-box #scroll #inner-box #entry #img {
+  width: 1rem;
+  margin-right: 0.5rem;
 }
 
-/* The search entry – analogous to Rofi’s “entry” */
-#entry {
-    all: unset;
-    padding: 6px;
-    margin: 20px 0 0 10px;
-    background-color: @bg-col;
-    color: @fg-col;
+/* Selected entry styling */
+#window #outer-box #scroll #inner-box #entry:selected {
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.1); /* translucent white for contrast */
+  outline: none;
 }
 
-/* (Optional) If your list items include arrow icons */
-#entry arrow {
-    color: @blue;
-}
-
-/* When a list item is selected, use the “selected” colors */
-#entry:selected {
-    background-color: @selected-col;
-}
-#entry:selected #text {
-    color: @fg-col2;
-}
-
-/* If drag‐and‐drop is supported */
-#entry:drop(active) {
-    background-color: @selected-col !important;
-}
-
-/* Button styling */
-button {
-    padding: 10px;
-    background-color: @bg-col-light;
-    color: @grey;
-    border-radius: 5px;
-}
-button:active,
-button:selected {
-    background-color: @bg-col;
-    color: @blue;
-}
-
-/* Message popups */
-#message {
-    background-color: @bg-col-light;
-    margin: 2px;
-    padding: 2px;
-    border-radius: 5px;
-}
-
-/* Additional textbox styling (if you have extra text input areas) */
-#textbox {
-    padding: 6px;
-    margin: 20px 0 0 20px;
-    background-color: @bg-col-light;
-    color: @blue;
-}

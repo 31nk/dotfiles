@@ -1,15 +1,15 @@
-@define-color base         #354259;  /* F */
-@define-color text         #ECE5C7;  /* C */
-@define-color surface0     #354259;  /* F */
-@define-color surface1     #354259;  /* F */
-@define-color surface2     #354259;  /* F */
-@define-color mtext        #C2DED1;  /* A */
-@define-color mycolor      #CDC2AE;  /* B */
-@define-color bg           #354259;  /* F */
-@define-color bg-hover     #354259;  /* F */
+@define-color base         #101010;  /* Dark background from provided list */
+@define-color text         #FFFFFF;  /* White text */
+@define-color surface0     #101010;  /* Dark */
+@define-color surface1     #101010;  /* Dark */
+@define-color surface2     #101010;  /* Dark */
+@define-color mtext        #90B99F;  /* Accent A (using provided hex) */
+@define-color mycolor      #E6B99D;  /* Accent B (using provided hex) */
+@define-color bg           #101010;  /* Dark background */
+@define-color bg-hover     #7E7E7E;  /* Lighter dark for hover */
 
 /* Updated MPRIS overlay color to use our accent A with 55% opacity */
-@define-color mpris-album-art-overlay  alpha(#C2DED1, 0.55);
+@define-color mpris-album-art-overlay  alpha(#90B99F, 0.55);
 @define-color mpris-button-hover       alpha(@bg, 0.50);
 @define-color border-color             alpha(@mycolor, 0.15);
 
@@ -100,18 +100,18 @@
 /* Updated critical notification colors using our palette */
 .control-center .notification-row .notification-background .notification.critical .notification-content,
 .floating-notifications.background .notification-background .notification.critical .notification-content {
-    background-color: #C2DED1;  /* A */
+    background-color: #90B99F;  /* Accent A */
 }
 
 .control-center .notification-row .notification-background .notification.critical .notification-content image,
 .floating-notifications.background .notification-background .notification.critical .notification-content image {
     background-color: unset;
-    color: #C2DED1;  /* A */
+    color: #90B99F;  /* Accent A */
 }
 
 .control-center .notification-row .notification-background .notification.critical .notification-content label,
 .floating-notifications.background .notification-background .notification.critical .notification-content label {
-    color: #ECE5C7;  /* C */
+    color: #FFFFFF;  /* White text */
 }
 
 .notification-content {
@@ -199,7 +199,7 @@
     font-size: initial;
     color: @text;
     text-shadow: none;
-    background: alpha(@mycolor, 0.3);  /* using B with transparency */
+    background: alpha(@mycolor, 0.3);  /* using Accent B with transparency */
     border: none;
     box-shadow: none;
     border-radius: 12px;
@@ -300,13 +300,13 @@
 /* Updated to use provided colors */
 .widget-buttons-grid > flowbox > flowboxchild > button label {
     font-size: 20px;
-    color: #C2DED1;  /* A */
+    color: #90B99F;  /* Accent A */
     transition: all 0.7s ease;
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button:hover label {
     font-size: 20px;
-    color: #ECE5C7;  /* C */
+    color: #FFFFFF;  /* White text */
     transition: all 0.7s ease;
 }
 
@@ -350,14 +350,14 @@ trough {
 /* Updated trough highlight to use provided accents */
 trough highlight {
     padding: 5px;
-    background: #C2DED1;  /* A */
+    background: #90B99F;  /* Accent A */
     border-radius: 20px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
     transition: all 0.7s ease;
 }
 trough highlight:hover {
     padding: 5px;
-    background: #CDC2AE;  /* B */
+    background: #E6B99D;  /* A variation of Accent B */
     border-radius: 20px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
     transition: all 0.7s ease;
@@ -384,3 +384,4 @@ trough slider:hover {
     margin: 8px;
     border-radius: 12px;
 }
+

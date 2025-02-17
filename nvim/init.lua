@@ -32,13 +32,18 @@ require("lazy").setup({
   { "folke/lazydev.nvim" },
   { "nvim-tree/nvim-tree.lua" },
   { "junegunn/fzf.vim" },
+  { "goolord/alpha-nvim" },
 })
 
--- Override LazyVim's colors once initialization is complete.
--- This ensures our custom highlights are applied last.
+-- Override LazyVim's colors and settings once initialization is complete.
+-- This ensures our custom highlights and relative line numbers are applied last.
 require("lazyvim.util").on_very_lazy(function()
   -- Enable true color support.
   vim.opt.termguicolors = true
+
+  -- Enable line numbers with relative numbers.
+  vim.opt.number = true
+  vim.opt.relativenumber = false
 
   -- Clear any previous highlight settings.
   vim.cmd("hi clear")
@@ -46,32 +51,34 @@ require("lazyvim.util").on_very_lazy(function()
   ------------------------------------------------------------------
   -- Main Syntax/Editor Colors:
   --
-  -- We use #354259 as our dark background.
-  -- Lighter colors are used for the foreground:
-  --   * #ECE5C7 — Off-white (for main text)
-  --   * #C2DED1 — Light mint (for statements, comments, identifiers)
-  --   * #CDC2AE — Light beige (for constants, line numbers)
+  -- Background: #101010
+  -- Normal text: #FFFFFF
+  -- Statements: #F5A191
+  -- Comments:   #A0A0A0 (italicized)
+  -- Constants:  #E6B99D
+  -- Identifiers: #E29ECA
+  -- LineNr:     #7E7E7E
   ------------------------------------------------------------------
-  vim.api.nvim_set_hl(0, "Normal", { fg = "#ECE5C7", bg = "#354259" })
-  vim.api.nvim_set_hl(0, "Statement", { fg = "#C2DED1" })
-  vim.api.nvim_set_hl(0, "Comment", { fg = "#C2DED1", italic = true })
-  vim.api.nvim_set_hl(0, "Constant", { fg = "#CDC2AE" })
-  vim.api.nvim_set_hl(0, "Identifier", { fg = "#C2DED1" })
-  vim.api.nvim_set_hl(0, "LineNr", { fg = "#CDC2AE" })
-  vim.api.nvim_set_hl(0, "Visual", { bg = "#354259" })
+  vim.api.nvim_set_hl(0, "Normal", { fg = "#FFFFFF", bg = "#101010" })
+  vim.api.nvim_set_hl(0, "Statement", { fg = "#F5A191" })
+  vim.api.nvim_set_hl(0, "Comment", { fg = "#A0A0A0", italic = true })
+  vim.api.nvim_set_hl(0, "Constant", { fg = "#E6B99D" })
+  vim.api.nvim_set_hl(0, "Identifier", { fg = "#E29ECA" })
+  vim.api.nvim_set_hl(0, "LineNr", { fg = "#7E7E7E" })
+  vim.api.nvim_set_hl(0, "Visual", { bg = "#90B99F" }) -- Visual selection
 
   ------------------------------------------------------------------
   -- Additional LazyVim / lazy.nvim UI Colors:
   --
-  -- All backgrounds use the dark color (#354259)
-  -- with lighter colors for the foreground elements.
+  -- Using the same background (#101010) and our chosen foreground
+  -- for consistency.
   ------------------------------------------------------------------
-  vim.api.nvim_set_hl(0, "LazyNormal", { fg = "#ECE5C7", bg = "#354259" })
-  vim.api.nvim_set_hl(0, "LazyBorder", { fg = "#C2DED1", bg = "#354259" })
-  vim.api.nvim_set_hl(0, "LazyButton", { fg = "#C2DED1", bg = "#354259" })
-  vim.api.nvim_set_hl(0, "LazyButtonActive", { fg = "#ECE5C7", bg = "#354259", bold = true })
-  vim.api.nvim_set_hl(0, "LazyTitle", { fg = "#C2DED1", bg = "#354259" })
-end)
+  vim.api.nvim_set_hl(0, "LazyNormal", { fg = "#FFFFFF", bg = "#101010" })
+  vim.api.nvim_set_hl(0, "LazyBorder", { fg = "#F5A191", bg = "#101010" })
+  vim.api.nvim_set_hl(0, "LazyButton", { fg = "#F5A191", bg = "#101010" })
+  vim.api.nvim_set_hl(0, "LazyButtonActive", { fg = "#FFFFFF", bg = "#101010", bold = true })
+  vim.api.nvim_set_hl(0, "LazyTitle", { fg = "#F5A191", bg = "#101010" })
 
-vim.opt.number = true
-vim.opt.relativenumber = false
+require("user.alpha")
+require("user.colors")
+end)
